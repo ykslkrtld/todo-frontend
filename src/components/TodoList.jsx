@@ -10,7 +10,7 @@ const TodoList = ({ todos, delTodo, putTodo, setTodoToEdit }) => {
 
   const handleEditClick = (todo) => {
     setTodoToEdit(todo);
-    window.scrollTo(0, 0); // Sayfanın en üstüne kaydır
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -33,7 +33,7 @@ const TodoList = ({ todos, delTodo, putTodo, setTodoToEdit }) => {
               <td className={item.isDone ? "text-decoration-line-through" : ""}>{item.description}</td>
               <td style={{ textAlign: "center" }}>
                 <Button variant="success" className="mx-1" onClick={() => handleToggleDone(item.id, item.isDone)}>
-                  <i className={`fa-regular fa-thumbs-up `}></i>
+                  <i className={`fa-solid fa-check `}></i>
                 </Button>
                 <Button variant="warning" className="mx-1" onClick={() => handleEditClick(item)}>
                   <i className="fa-solid fa-pen"></i>
