@@ -19,7 +19,7 @@ const Home = () => {
 
   const delTodo = async (id) => {
     try {
-      await axios.delete(`${BASE_URL}${id}`);
+      await axios.delete(`${BASE_URL}/${id}`);
       getTodo();
     } catch (error) {
       console.log(error);
@@ -37,7 +37,7 @@ const Home = () => {
 
   const putTodo = async (id, data) => {
     try {
-      await axios.put(`${BASE_URL}${id}`, data);
+      await axios.put(`${BASE_URL}/${id}`, data);
       getTodo();
     } catch (error) {
       console.error(error);
