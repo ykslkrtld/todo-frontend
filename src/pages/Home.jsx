@@ -9,7 +9,7 @@ const Home = () => {
 
   const getTodo = async () => {
     try {
-      const res = await axios(process.env.BASE_URL);
+      const res = await axios(`${process.env.BASE_URL}`);
       console.log(res.data.result.rows);
       setTodos(res.data.result.rows);
     } catch (error) {
@@ -28,7 +28,7 @@ const Home = () => {
 
   const postTodo = async (data) => {
     try {
-      await axios.post(process.env.BASE_URL, data);
+      await axios.post(`${process.env.BASE_URL}`, data);
       getTodo();
     } catch (error) {
       console.error(error);
