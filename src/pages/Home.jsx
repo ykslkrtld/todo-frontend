@@ -9,7 +9,7 @@ const Home = () => {
 
   const getTodo = async () => {
     try {
-      const res = await axios(BASE_URL);
+      const res = await axios("https://todo-backend2-kq3v.onrender.com");
       console.log(res.data.result.rows);
       setTodos(res.data.result.rows);
     } catch (error) {
@@ -19,7 +19,7 @@ const Home = () => {
 
   const delTodo = async (id) => {
     try {
-      await axios.delete(`${BASE_URL}/${id}`);
+      await axios.delete(`https://todo-backend2-kq3v.onrender.com/${id}`);
       getTodo();
     } catch (error) {
       console.log(error);
@@ -28,7 +28,7 @@ const Home = () => {
 
   const postTodo = async (data) => {
     try {
-      await axios.post(BASE_URL, data);
+      await axios.post("https://todo-backend2-kq3v.onrender.com", data);
       getTodo();
     } catch (error) {
       console.error(error);
@@ -37,7 +37,7 @@ const Home = () => {
 
   const putTodo = async (id, data) => {
     try {
-      await axios.put(`${BASE_URL}/${id}`, data);
+      await axios.put(`https://todo-backend2-kq3v.onrender.com/${id}`, data);
       getTodo();
     } catch (error) {
       console.error(error);
